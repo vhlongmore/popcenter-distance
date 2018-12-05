@@ -1,7 +1,14 @@
+# -*- coding: future_fstrings -*-
+
 """
 Functions for computing the geographical distance between two pairs of
 latitude, longitude points.
 """
+from __future__ import unicode_literals
+from __future__ import division
+from __future__ import absolute_import
+from __future__ import print_function
+
 import math
 
 from popcenter.coordinates import LatLongCoordinate

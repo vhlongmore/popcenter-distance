@@ -1,3 +1,10 @@
+# -*- coding: future_fstrings -*-
+
+from __future__ import unicode_literals
+from __future__ import division
+from __future__ import absolute_import
+from __future__ import print_function
+
 import datetime
 import math
 import os
@@ -81,7 +88,7 @@ class StateSearch:
         if not os.path.isfile(self.data_file):
             # Try another year
             y = f'{downloader.year:#}'
-            matches = glob(self.data_file.replace(y, '*'), recursive=False)
+            matches = glob(self.data_file.replace(y, '*'))
             if matches:
                 self.data_file = max(matches, key=os.path.getmtime)
             else:
@@ -92,7 +99,7 @@ class StateSearch:
         self.read_data()
 
     def read_data(self):
-        with open(self.data_file, 'r', newline=None) as data_file:
+        with open(self.data_file, 'rU') as data_file:
             reader = DictReader(data_file)
             for row in reader:
                 state = state_abbr.STATE_ABBR_LONG_TO_SHORT[row['STNAME']]

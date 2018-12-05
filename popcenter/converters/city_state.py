@@ -1,3 +1,10 @@
+# -*- coding: future_fstrings -*-
+
+from __future__ import unicode_literals
+from __future__ import division
+from __future__ import absolute_import
+from __future__ import print_function
+
 from collections import Counter
 
 from uszipcode import SearchEngine
@@ -30,7 +37,8 @@ class CityStateSearch:
             latlong_coordinates.append(self.search(city, state))
         return latlong_coordinates
 
-    def get_county(self, coordinates: LatLongCoordinate):
-        zipcodes = self.engine.by_coordinates(coordinates.latitude, coordinates.longitude)
+    def get_county(self, coordinates):
+        zipcodes = self.engine.by_coordinates(
+            coordinates.latitude, coordinates.longitude)
         c = Counter([z.county for z in zipcodes])
         return c.most_common()[0][0]

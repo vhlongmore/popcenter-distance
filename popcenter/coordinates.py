@@ -1,5 +1,12 @@
+# -*- coding: future_fstrings -*-
+
+from __future__ import unicode_literals
+from __future__ import division
+from __future__ import absolute_import
+from __future__ import print_function
+
 import math
-from _pydecimal import Decimal
+from decimal import Decimal
 
 
 class LatLongCoordinate:

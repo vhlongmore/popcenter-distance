@@ -1,5 +1,13 @@
+# -*- coding: future_fstrings -*-
+
+
+from __future__ import unicode_literals
+from __future__ import division
+from __future__ import absolute_import
+from __future__ import print_function
+
 import os
-from unittest import TestCase
+from unittest2 import TestCase
 
 from popcenter import coordinates
 from popcenter.converters.state import StateSearch, CensusDataDownloader
